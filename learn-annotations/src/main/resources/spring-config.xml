@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean name="helloWorld,hw" class="entities.HelloWorld" scope="singleton" autowire="byName" init-method="initMethod"
+          destroy-method="destroy">
+        <constructor-arg index="0" value="xml手动配置"></constructor-arg>
+    </bean>
+
+    <!--配置一个单例的bean-->
+
+    <bean name="singleton__hello" class="entities.HelloWorld" scope="singleton" autowire="byName" init-method="initMethod"
+          destroy-method="destroy">
+        <constructor-arg index="0" value="这是一个单例的bean"></constructor-arg>
+    </bean>
+
+    <!--这是一个原型模式的Bean-->
+    <bean name="prototype_hello" class="entities.HelloWorld" scope="prototype" autowire="byName" init-method="initMethod"
+          destroy-method="destroy">
+        <constructor-arg index="0" value="这是一个原型模式的bean"></constructor-arg>
+    </bean>
+
+</beans>

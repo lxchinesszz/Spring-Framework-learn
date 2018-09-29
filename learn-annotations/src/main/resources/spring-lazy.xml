@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <!--配置一个懒加载的bean-->
+    <bean name="lazy_hello" class="entities.HelloWorld" init-method="initMethod" lazy-init="true"
+    >
+        <constructor-arg index="0" value="这是一个lazy的bean"></constructor-arg>
+    </bean>
+
+
+    <!--配置一个非懒加载的的bean-->
+    <bean name="nolazy_hello" class="entities.HelloWorld" init-method="initMethod" lazy-init="false"
+    >
+        <constructor-arg index="0" value="这是一个nolazy的bean"></constructor-arg>
+    </bean>
+
+    <!--这是一个未决的默认属性的bean-->
+    <bean name="nolazy_lazy_hello" class="entities.HelloWorld" init-method="initMethod"
+    >
+        <constructor-arg index="0" value="这是一个未决的的bean"></constructor-arg>
+    </bean>
+</beans>

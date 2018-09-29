@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean name="dependencyAA" class="chapter_05.DependencyA"></bean>
+
+    <bean name="pojo,pojo2" class="chapter_05.POJO" autowire="byType">
+        <!--都是根据set注入-->
+        <property name="dependency">
+            <ref bean="dependencyAA"></ref>
+        </property>
+        <property name="name" value="Mock"></property>
+    </bean>
+
+</beans>

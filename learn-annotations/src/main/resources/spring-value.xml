@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+    <!-- 配置文件 -->
+    <context:property-placeholder location="classpath:bookinfo.properties"
+                                  file-encoding="utf8"
+                                  ignore-unresolvable="true"/>
+
+    <bean class="chapter_05.Book">
+        <property name="bookName" value="${book_name}"></property>
+        <property name="author" value="${author}"></property>
+        <property name="price" value="${price}"></property>
+        <property name="describe" value="${describe}"></property>
+    </bean>
+
+</beans>
